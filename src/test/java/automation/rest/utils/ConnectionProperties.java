@@ -23,4 +23,12 @@ public class ConnectionProperties {
     public String getPassword() {
         return props.getProperty("test.user1.password");
     }
+
+    public String getDomain() {
+        return props.getProperty("test.project.domain");
+    }
+
+    public String getProject() {
+        return props.getProperty("test.project.name");
+    }
 }

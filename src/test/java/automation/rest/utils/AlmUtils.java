@@ -56,4 +56,9 @@ public class AlmUtils {
         ConnectionProperties props = getConnectionProperties();
         return login(props.getBaseDirUri(), props.getUserName(), props.getPassword());
     }
+
+    public static String getDefaultProjectUri() {
+        ConnectionProperties props = getConnectionProperties();
+        return props.getBaseDirUri() + String.format("api/domains/%s/projects/%s/", props.getDomain(), props.getProject());
+    }
 }
