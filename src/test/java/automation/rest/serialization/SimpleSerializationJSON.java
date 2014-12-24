@@ -3,6 +3,7 @@ package automation.rest.serialization;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
 
@@ -15,7 +16,9 @@ public class SimpleSerializationJSON {
         InputStream inputStream = getClass().getResourceAsStream("simple-person.json");
         Person person = new ObjectMapper().readValue(inputStream, Person.class);
         System.out.println(person);
-        new ObjectMapper().writeValue(System.out, person);
+        new ObjectMapper().writeValue(new FileOutputStream(""), person);
+        new ObjectMapper().writeValueAsString(person);
+
     }
 
     public static class Person {
